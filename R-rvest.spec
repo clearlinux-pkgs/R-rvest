@@ -4,26 +4,26 @@
 #
 Name     : R-rvest
 Version  : 0.3.2
-Release  : 14
+Release  : 15
 URL      : https://cran.r-project.org/src/contrib/rvest_0.3.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rvest_0.3.2.tar.gz
 Summary  : Easily Harvest (Scrape) Web Pages
 Group    : Development/Tools
 License  : GPL-3.0
-Requires: R-evaluate
 Requires: R-httr
 Requires: R-png
 Requires: R-selectr
 Requires: R-xml2
-BuildRequires : R-evaluate
 BuildRequires : R-httr
 BuildRequires : R-png
 BuildRequires : R-selectr
 BuildRequires : R-xml2
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
-download, then manipulate, HTML and XML.
+rvest
+=====
+[![Build Status](https://travis-ci.org/hadley/rvest.svg?branch=master)](https://travis-ci.org/hadley/rvest) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rvest)](http://cran.r-project.org/package=rvest) [![Coverage Status](https://img.shields.io/codecov/c/github/hadley/rvest/master.svg)](https://codecov.io/github/hadley/rvest?branch=master)
 
 %prep
 %setup -q -c -n rvest
@@ -33,11 +33,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1521248313
+export SOURCE_DATE_EPOCH=1552856288
 
 %install
+export SOURCE_DATE_EPOCH=1552856288
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1521248313
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -72,8 +72,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library rvest|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  rvest || :
 
 
 %files
@@ -108,3 +107,8 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/rvest/html-ex/bad-encoding.html
 /usr/lib64/R/library/rvest/html/00Index.html
 /usr/lib64/R/library/rvest/html/R.css
+/usr/lib64/R/library/rvest/tests/testthat.R
+/usr/lib64/R/library/rvest/tests/testthat/test-forms.R
+/usr/lib64/R/library/rvest/tests/testthat/test-selectors.R
+/usr/lib64/R/library/rvest/tests/testthat/test-tables.R
+/usr/lib64/R/library/rvest/tests/testthat/test.html
