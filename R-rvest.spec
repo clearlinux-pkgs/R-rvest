@@ -4,16 +4,12 @@
 #
 Name     : R-rvest
 Version  : 0.3.2
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/rvest_0.3.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rvest_0.3.2.tar.gz
 Summary  : Easily Harvest (Scrape) Web Pages
 Group    : Development/Tools
 License  : GPL-3.0
-Requires: R-httr
-Requires: R-png
-Requires: R-selectr
-Requires: R-xml2
 BuildRequires : R-httr
 BuildRequires : R-png
 BuildRequires : R-selectr
@@ -33,10 +29,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552856288
+export SOURCE_DATE_EPOCH=1552858281
 
 %install
-export SOURCE_DATE_EPOCH=1552856288
+export SOURCE_DATE_EPOCH=1552858281
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
