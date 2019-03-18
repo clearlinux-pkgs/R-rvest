@@ -1,5 +1,7 @@
 0.3.2
+R-Rcpp
 R-httr
 R-png
 R-selectr
+R-stringi
 R-xml2
