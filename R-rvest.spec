@@ -4,7 +4,7 @@
 #
 Name     : R-rvest
 Version  : 0.3.4
-Release  : 22
+Release  : 23
 URL      : https://cran.r-project.org/src/contrib/rvest_0.3.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rvest_0.3.4.tar.gz
 Summary  : Easily Harvest (Scrape) Web Pages
