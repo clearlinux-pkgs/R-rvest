@@ -4,25 +4,26 @@
 #
 Name     : R-rvest
 Version  : 0.3.4
-Release  : 24
+Release  : 25
 URL      : https://cran.r-project.org/src/contrib/rvest_0.3.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rvest_0.3.4.tar.gz
 Summary  : Easily Harvest (Scrape) Web Pages
 Group    : Development/Tools
 License  : GPL-3.0
-Requires: R-Rcpp
 Requires: R-httr
+Requires: R-magrittr
+Requires: R-png
 Requires: R-selectr
 Requires: R-xml2
-BuildRequires : R-Rcpp
 BuildRequires : R-httr
+BuildRequires : R-magrittr
+BuildRequires : R-png
 BuildRequires : R-selectr
 BuildRequires : R-xml2
 BuildRequires : buildreq-R
 
 %description
-# rvest <img src='man/figures/logo.png' align="right" height="139" />
-<!-- badges: start -->
+make it easy to download, then manipulate, HTML and XML.
 
 %prep
 %setup -q -c -n rvest
@@ -31,13 +32,13 @@ BuildRequires : buildreq-R
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1558020116
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1569294615
 
 %install
-export SOURCE_DATE_EPOCH=1558020116
+export SOURCE_DATE_EPOCH=1569294615
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -66,7 +67,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
