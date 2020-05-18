@@ -4,7 +4,7 @@
 #
 Name     : R-rvest
 Version  : 0.3.5
-Release  : 28
+Release  : 29
 URL      : https://cran.r-project.org/src/contrib/rvest_0.3.5.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rvest_0.3.5.tar.gz
 Summary  : Easily Harvest (Scrape) Web Pages
@@ -23,26 +23,26 @@ BuildRequires : R-xml2
 BuildRequires : buildreq-R
 
 %description
-# rvest <img src='man/figures/logo.png' align="right" height="139" />
-<!-- badges: start -->
+make it easy to download, then manipulate, HTML and XML.
 
 %prep
 %setup -q -c -n rvest
+cd %{_builddir}/rvest
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1573368243
+export SOURCE_DATE_EPOCH=1589761311
 
 %install
-export SOURCE_DATE_EPOCH=1573368243
+export SOURCE_DATE_EPOCH=1589761311
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
